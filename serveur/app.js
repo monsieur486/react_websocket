@@ -23,7 +23,7 @@ io.on("connection", (socket) => {
 function ServersReceived(socket) {
     socket.on('bouton_client', () => {
         console.log('Le client a cliqué sur le bouton !');
-        socket.broadcast('new click', {
+        socket.emit('new click', {
             numUsers: true
         });
     });
