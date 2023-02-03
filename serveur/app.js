@@ -20,11 +20,14 @@ io.on("connection", (socket) => {
     ServersReceived(socket);
 });
 
+let numclics =0;
+
 function ServersReceived(socket) {
     socket.on('bouton_client', () => {
-        console.log('Le client a cliqué sur le bouton !');
+        console.log('un clic! socket.id: ' + socket.id);
+        numclics = numclics + 1;
         socket.emit('new click', {
-            numUsers: true
+            clics: numclics
         });
     });
 

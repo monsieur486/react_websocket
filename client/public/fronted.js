@@ -1,8 +1,8 @@
 const URL = "https://tda.mr486.com:8080";
 const socket = io(URL, { autoConnect: true });
 
-socket.on('new click', (numUsers) => {
-    console.log("Message du serveur: " + numUsers.toString());
+socket.on('new click', (data) => {
+    console.log("Message du serveur: " + data.numUsers);
 });
 
 function avertir_serveur() {
