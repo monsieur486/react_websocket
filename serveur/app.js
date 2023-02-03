@@ -21,22 +21,13 @@ const io = new Server(https_Server, {
 
 
 io.on("connection", (socket) => {
-    console.log('a user connected');
+    console.log('Un client se connecte, socket.id = ' + socket.id);
     ServersReceived(socket);
 });
 
-
 function ServersReceived(socket) {
-    socket.on("Hello", (arg, callback) => {
-        console.log(arg); // "Hello Server"
-        callback("Thanks,got it");
-    });
-    socket.on("News", (data, callback) => {
-        console.log(data, data.N);
-        callback("Received News from:" + data.U + " at :" + new Date().toLocaleString());
-    });
-    socket.on("BigData_Bytes", (user, data) => {
-        console.log(user, data.length);
+    socket.on('bouton_client', function(){
+        console.log('Le client a cliqué sur le bouton !')
     });
 }
 
