@@ -29,8 +29,8 @@ function ServersReceived(socket) {
     socket.on('bouton_client', () => {
         console.log('Le client a cliqué sur le bouton !');
         numUsers = numUsers + 1;
-        socket.broadcast.emit('new click', {
-            click: numUsers
+        socket.broadcast('new click', {
+            numUsers: numUsers
         });
     });
 
