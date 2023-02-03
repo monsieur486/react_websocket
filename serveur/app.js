@@ -15,7 +15,7 @@ const options = {
 const https_Server = https.createServer(options, app).listen(8080);
 const io = new Server(https_Server, {
     cors: {
-        origin: "https://tda.mr486.com"
+        origin: "*.mr486.com"
     }
 });
 
