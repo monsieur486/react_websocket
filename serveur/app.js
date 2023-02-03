@@ -1,11 +1,38 @@
+const express = require('express');
+const app = express();
+const https = require('https');
 const fs = require('fs');
 
-let options = {
+const {
+    Server
+} = require("socket.io");
+
+//HTTPS Server
+const options = {
     key: fs.readFileSync('/home/prems/certs/privkey.pem'),
-    cert: fs.readFileSync('/home/prems/certs/fullchain.pem'),
-    requestCert: true
+    cert: fs.readFileSync('/home/prems/certs/fullchain.pem')
 };
-let server = require('https').createServer(options);
-let io = require('socket.io').listen(server);
-server.listen(8080);
-console.log('Server started at port: 8080');
+const https_Server = https.createServer(options, app).listen(8080);
+const io = new Server(https_Server);
+
+
+io.on("connection", (socket) => {
+    ServersReceived(socket);
+});
+
+
+function ServersReceived(socket) {
+    socket.on("Hello", (arg, callback) => {
+        console.log(arg); // "Hello Server"
+        callback("Thanks,got it");
+    });
+    socket.on("News", (data, callback) => {
+        console.log(data, data.N);
+        callback("Received News from:" + data.U + " at :" + new Date().toLocaleString());
+    });
+    socket.on("BigData_Bytes", (user, data) => {
+        console.log(user, data.length);
+    });
+}
+
+console.log('Server on port 8080 https.CTRL+C to quit.');
