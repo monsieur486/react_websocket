@@ -34,7 +34,7 @@ function ServersReceived(socket) {
         });
     });
 
-    socket.on('bouton_client', () => {
+    socket.on('raz', () => {
         numclics = 0;
         console.log(' RAZ! => id: ' + socket.id);
         io.emit('new click', {
