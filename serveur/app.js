@@ -1,8 +1,8 @@
 const fs = require('fs');
 
 let options = {
-    key: fs.readFileSync('/home/prems/certs/privkey.key'),
-    cert: fs.readFileSync('/home/prems/certs/fullchain.crt'),
+    key: fs.readFileSync('/home/prems/certs/privkey.pem'),
+    cert: fs.readFileSync('/home/prems/certs/fullchain.pem'),
     requestCert: true
 };
 let server = require('https').createServer(options);
