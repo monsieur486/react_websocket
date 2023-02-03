@@ -10,3 +10,7 @@ socket.on('new click', (data) => {
 function avertir_serveur() {
     socket.emit('bouton_client');
 }
+
+function raz() {
+    socket.emit('raz');
+}

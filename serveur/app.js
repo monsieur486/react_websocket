@@ -34,6 +34,14 @@ function ServersReceived(socket) {
         });
     });
 
+    socket.on('bouton_client', () => {
+        numclics = 0;
+        console.log(' RAZ! => id: ' + socket.id);
+        io.emit('new click', {
+            clics: numclics
+        });
+    });
+
     socket.on('disconnect', () => {
         console.log("Le client s'est connecté, socket.id = " + socket.id);
     });
