@@ -26,7 +26,7 @@ function ServersReceived(socket) {
     socket.on('bouton_client', () => {
         numclics = numclics + 1;
         console.log(numclics + ' clics! => id: ' + socket.id);
-        socket.emit('new click', {
+        socket.broadcast.emit('new click', {
             clics: numclics
         });
     });
