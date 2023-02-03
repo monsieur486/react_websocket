@@ -15,12 +15,15 @@ const io = new Server(https_Server, {
     }
 });
 
+let numclics =0;
+
 io.on("connection", (socket) => {
     console.log('Un client se connecte, socket.id = ' + socket.id);
+    io.emit('new click', {
+        clics: numclics
+    });
     ServersReceived(socket);
 });
-
-let numclics =0;
 
 function ServersReceived(socket) {
     socket.on('bouton_client', () => {
