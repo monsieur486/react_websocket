@@ -17,6 +17,7 @@ const io = new Server(https_Server);
 
 
 io.on("connection", (socket) => {
+    console.log('a user connected');
     ServersReceived(socket);
 });
 
