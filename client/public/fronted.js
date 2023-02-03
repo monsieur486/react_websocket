@@ -3,7 +3,7 @@ const socket = io(URL, { autoConnect: true });
 
 socket.on('new click', (data) => {
     let clics = data.clics;
-    var text = document.getElementById('clics').textContent = clics;
+    document.getElementById('clics').textContent = clics;
     console.log("Message du serveur: " + clics);
 });
 
