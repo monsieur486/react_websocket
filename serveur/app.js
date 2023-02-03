@@ -13,7 +13,11 @@ const options = {
     cert: fs.readFileSync('/home/prems/certs/fullchain.pem')
 };
 const https_Server = https.createServer(options, app).listen(8080);
-const io = new Server(https_Server);
+const io = new Server(https_Server, {
+    cors: {
+        origin: "https://tda.mr486.com:8080"
+    }
+});
 
 
 io.on("connection", (socket) => {
