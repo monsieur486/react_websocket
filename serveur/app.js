@@ -19,16 +19,25 @@ const io = new Server(https_Server, {
     }
 });
 
-
+let numUsers = 0;
 io.on("connection", (socket) => {
     console.log('Un client se connecte, socket.id = ' + socket.id);
     ServersReceived(socket);
 });
 
 function ServersReceived(socket) {
-    socket.on('bouton_client', function(){
-        console.log('Le client a cliqué sur le bouton !')
+    socket.on('bouton_client', () => {
+        console.log('Le client a cliqué sur le bouton !');
+        numUsers = numUsers + 1;
+        socket.broadcast.emit('new click', {
+            click: numUsers
+        });
     });
+
+    socket.on('disconnect', () => {
+        console.log("Le client s'est connecté, socket.id = " + socket.id);
+    });
+
 }
 
 console.log('Server on port 8080 https.CTRL+C to quit.');
