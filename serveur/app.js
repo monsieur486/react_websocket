@@ -2,12 +2,8 @@ const express = require('express');
 const app = express();
 const https = require('https');
 const fs = require('fs');
+const { Server } = require("socket.io");
 
-const {
-    Server
-} = require("socket.io");
-
-//HTTPS Server
 const options = {
     key: fs.readFileSync('/etc/certssl/wildcardMr486/privkey.pem'),
     cert: fs.readFileSync('/etc/certssl/wildcardMr486/fullchain.pem')
@@ -19,7 +15,6 @@ const io = new Server(https_Server, {
     }
 });
 
-let numUsers = 0;
 io.on("connection", (socket) => {
     console.log('Un client se connecte, socket.id = ' + socket.id);
     ServersReceived(socket);
@@ -28,9 +23,8 @@ io.on("connection", (socket) => {
 function ServersReceived(socket) {
     socket.on('bouton_client', () => {
         console.log('Le client a cliqué sur le bouton !');
-        numUsers = numUsers + 1;
         socket.broadcast('new click', {
-            numUsers: numUsers
+            numUsers: true
         });
     });
 
