@@ -16,10 +16,12 @@ function raz() {
         message: 'Mettre le compteur à <b>0</b> ?',
         buttons: {
             cancel: {
-                label: '<i class="fa fa-times"></i> Annuler'
+                label: '<i class="fa fa-times"></i> Annuler',
+                className: 'btn-success'
             },
             confirm: {
-                label: '<i class="fa fa-check"></i> Confirmer'
+                label: '<i class="fa fa-check"></i> Confirmer',
+                className: 'btn-danger'
             }
         },
         callback: function (result) {
