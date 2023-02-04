@@ -21,7 +21,7 @@ function raz() {
                 className: 'btn-success'
             },
             confirm: {
-                label: '<i class="fa fa-check"></i> Confirmer',
+                label: '<i class="fa fa-check"></i> !!! CONFIRMER !!!',
                 className: 'btn-danger'
             }
         },
