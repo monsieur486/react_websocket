@@ -13,7 +13,7 @@ function avertir_serveur() {
 
 function raz() {
     bootbox.confirm({
-        message: 'Mettre le compteur à 0 ?',
+        message: 'Mettre le compteur à <b>0</b> ?',
         buttons: {
             confirm: {
                 label: 'Oui',
