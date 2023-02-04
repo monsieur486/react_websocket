@@ -1,4 +1,4 @@
-const URL = "https://tda.mr486.com/socket.io";
+const URL = "wss://tda.mr486.com/socket.io";
 const socket = io(URL, { autoConnect: true });
 
 socket.on('new click', (data) => {
