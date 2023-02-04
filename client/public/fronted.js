@@ -15,13 +15,11 @@ function raz() {
     bootbox.confirm({
         message: 'Mettre le compteur à <b>0</b> ?',
         buttons: {
-            confirm: {
-                label: 'Oui',
-                className: 'btn-danger'
-            },
             cancel: {
-                label: 'Non',
-                className: 'btn-success'
+                label: '<i class="fa fa-times"></i> Annuler'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Confirmer'
             }
         },
         callback: function (result) {
