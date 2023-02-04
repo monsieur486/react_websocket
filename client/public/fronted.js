@@ -12,9 +12,22 @@ function avertir_serveur() {
 }
 
 function raz() {
-    bootbox.confirm('Mise à 0 du compteur de clics!', function(result) {
-        if(result){
-            socket.emit('raz');
+    bootbox.confirm({
+        message: 'Mettre le compteur à 0 ?',
+        buttons: {
+            confirm: {
+                label: 'Oui',
+                className: 'btn-success'
+            },
+            cancel: {
+                label: 'Non',
+                className: 'btn-danger'
+            }
+        },
+        callback: function (result) {
+            if(result){
+                socket.emit('raz');
+            }
         }
     });
 }
