@@ -12,7 +12,7 @@ function avertir_serveur() {
 }
 
 function raz() {
-    bootbox.confirm('This is the default confirm!', function(result) {
+    bootbox.confirm('Mise à 0 du compteur de clics!', function(result) {
         if(result){
             socket.emit('raz');
         }
