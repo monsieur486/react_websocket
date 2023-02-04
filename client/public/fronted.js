@@ -14,7 +14,6 @@ function avertir_serveur() {
 function raz() {
     bootbox.confirm({
         message: 'Mettre le compteur à <b>0</b> ?',
-        closeButton: false,
         className: 'rubberBand animated',
         buttons: {
             cancel: {
