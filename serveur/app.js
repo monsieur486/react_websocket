@@ -15,7 +15,22 @@ const io = new Server(https_Server, {
     }
 });
 
-let numclics =0;
+let numclics = 0;
+
+let laurent = { nom: "Laurent", photo: "laurent.jpg", points: 150};
+let dan = { nom: "Dan", photo: "dan.jpg", points: 50};
+let jp = { nom: "JP", photo: "jp.jpg", points: -200};
+let etienne = { nom: "Etienne", photo: "etienne.jpg", points: 0};
+
+let partie = {
+    nom: "2023-01-12",
+    joueurs: [
+        laurent,
+        dan,
+        jp,
+        etienne
+    ]
+}
 
 io.on("connection", (socket) => {
     console.log('Un client se connecte, socket.id = ' + socket.id);

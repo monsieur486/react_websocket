@@ -12,5 +12,9 @@ function avertir_serveur() {
 }
 
 function raz() {
-    socket.emit('raz');
+    bootbox.confirm('This is the default confirm!', function(result) {
+        if(result){
+            socket.emit('raz');
+        }
+    });
 }
