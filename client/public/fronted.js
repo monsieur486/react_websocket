@@ -17,11 +17,11 @@ function raz() {
         buttons: {
             confirm: {
                 label: 'Oui',
-                className: 'btn-success'
+                className: 'btn-danger'
             },
             cancel: {
                 label: 'Non',
-                className: 'btn-danger'
+                className: 'btn-success'
             }
         },
         callback: function (result) {
