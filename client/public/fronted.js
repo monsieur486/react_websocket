@@ -15,6 +15,7 @@ function raz() {
     bootbox.confirm({
         message: 'Mettre le compteur à <b>0</b> ?',
         className: 'rubberBand animated',
+        closeButton: false,
         buttons: {
             cancel: {
                 label: '<i class="fa fa-times"></i> Annuler',
