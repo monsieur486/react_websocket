@@ -16,7 +16,6 @@ function raz() {
         message: 'Mettre le compteur à <b>0</b> ?',
         closeButton: false,
         className: 'rubberBand animated',
-        size: 'small',
         buttons: {
             cancel: {
                 label: '<i class="fa fa-times"></i> Annuler',
