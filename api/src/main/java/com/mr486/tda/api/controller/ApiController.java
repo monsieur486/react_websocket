@@ -45,7 +45,7 @@ public class ApiController {
 
     @GetMapping("/data/raz")
     public String razData() {
-        ApiApplication.reunion.setName(null);
+        ApiApplication.reunion.setName("");
         ApiApplication.reunion.setAge(0);
         return "{ 'raz': true}";
     }
