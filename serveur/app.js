@@ -1,39 +1,19 @@
 const express = require('express');
 const app = express();
-const https = require('https');
-const fs = require('fs');
+const http = require('http');
 const { Server } = require("socket.io");
 
-const options = {
-    key: fs.readFileSync('/etc/certssl/wildcardMr486/privkey.pem'),
-    cert: fs.readFileSync('/etc/certssl/wildcardMr486/fullchain.pem')
-};
-const https_Server = https.createServer(options, app).listen(8080);
-const io = new Server(https_Server, {
+const http_Server = http.createServer(app).listen(8080);
+const io = new Server(http_Server, {
     cors: {
-        origin: "https://tda.mr486.com"
-    }
+    origin: "https://tda.mr486.com"
+  }
 });
 
 let numclics = 0;
 
-let laurent = { nom: "Laurent", photo: "laurent.jpg", points: 150};
-let dan = { nom: "Dan", photo: "dan.jpg", points: 50};
-let jp = { nom: "JP", photo: "jp.jpg", points: -200};
-let etienne = { nom: "Etienne", photo: "etienne.jpg", points: 0};
-
-let partie = {
-    nom: "2023-01-12",
-    joueurs: [
-        laurent,
-        dan,
-        jp,
-        etienne
-    ]
-}
-
 io.on("connection", (socket) => {
-    console.log('Un client se connecte, socket.id = ' + socket.id);
+    console.log("⚡: Un nouveau client s'est connecté, socket.id: " + socket.id);
     io.emit('new click', {
         clics: numclics
     });
@@ -43,7 +23,7 @@ io.on("connection", (socket) => {
 function ServersReceived(socket) {
     socket.on('bouton_client', () => {
         numclics = numclics + 1;
-        console.log(numclics + ' clics! => id: ' + socket.id);
+        console.log('🖱️: ' + numclics + ' clics! => dernier clic émis par socket.id: ' + socket.id);
         io.emit('new click', {
             clics: numclics
         });
@@ -51,16 +31,16 @@ function ServersReceived(socket) {
 
     socket.on('raz', () => {
         numclics = 0;
-        console.log(' RAZ! => id: ' + socket.id);
+        console.log('🖱️: RAZ! => demande émise par socket.id: ' + socket.id);
         io.emit('new click', {
             clics: numclics
         });
     });
 
     socket.on('disconnect', () => {
-        console.log("Le client s'est connecté, socket.id = " + socket.id);
+        console.log("🔥: Le client s'est connecté, socket.id = " + socket.id);
     });
 
 }
 
-console.log('Server on port 8080 https.CTRL+C to quit.');
+console.log('✅: Server Lancé. CTRL+C pour quitter.');
