@@ -1,4 +1,7 @@
-const URL = "wss://ws.tda.mr486.com";
+import {config} from "../config";
+
+
+const URL = config.wsUrl;
 const socket = io(URL, { autoConnect: true });
 
 socket.on('new click', (data) => {
