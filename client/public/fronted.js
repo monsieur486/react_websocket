@@ -1,6 +1,6 @@
-require('dotenv').config();
+const {Config} = require('./config');
 
-const URL = process.env.WS_URL;
+const URL = Config.wsurl;
 const socket = io(URL, { autoConnect: true });
 
 socket.on('new click', (data) => {
