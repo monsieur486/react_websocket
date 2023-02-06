@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ApiApplication {
 
-	public static Reunion reunion = new Reunion("Nom", 5);
+	public static Reunion reunion = new Reunion();
 	public static void main(String[] args) {
 
 		SpringApplication.run(ApiApplication.class, args);
