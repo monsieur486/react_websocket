@@ -1,7 +1,4 @@
-const {Config} = require('./config');
-
-const URL = Config.wsurl;
-const socket = io(URL, { autoConnect: true });
+const socket = io(ws_url, { autoConnect: true });
 
 socket.on('new click', (data) => {
     let clics = data.clics;

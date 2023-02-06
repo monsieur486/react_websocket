@@ -1,4 +1,1 @@
-let Config = {
-    wsurl : "wss://ws.tda.mr486.com"
-};
-module.exports = {Config};
+let ws_url = 'http://127.0.0.1:3001';
