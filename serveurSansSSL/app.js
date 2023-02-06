@@ -6,7 +6,7 @@ const { Server } = require("socket.io");
 const http_Server = http.createServer(app).listen(8080);
 const io = new Server(http_Server, {
     cors: {
-        origin: "https://tda.mr486.com/socket.io"
+        origin: "https://ws.tda.mr486.com/socket.io"
     }
 });
 
