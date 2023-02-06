@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 @NoArgsConstructor
 public class Reunion {
-    private String name;
-    private Integer age;
+    private String nom;
+    private Integer clics;
 
-    public Reunion(String name, Integer age) {
-        this.name = name;
-        this.age = age;
+    public Reunion(String nom, Integer clics) {
+        this.nom = nom;
+        this.clics = clics;
     }
 
     public String toJson(){

@@ -1,7 +1,5 @@
 package com.mr486.tda.api.controller;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.mr486.tda.api.ApiApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +18,10 @@ public class ApiController {
     @GetMapping("/data/plus")
     public String addData() {
 
-        Integer age = ApiApplication.reunion.getAge();
+        Integer age = ApiApplication.reunion.getClics();
 
-        ApiApplication.reunion.setName("En cours");
-        ApiApplication.reunion.setAge(age + 1);
+        ApiApplication.reunion.setNom("En cours");
+        ApiApplication.reunion.setClics(age + 1);
 
         return ApiApplication.reunion.toJson();
     }
@@ -31,17 +29,17 @@ public class ApiController {
     @GetMapping("/data/moins")
     public String removeData() {
 
-        if(ApiApplication.reunion.getAge()>0){
-            Integer age = ApiApplication.reunion.getAge()-1;
-            ApiApplication.reunion.setAge(age);
+        if(ApiApplication.reunion.getClics()>0){
+            Integer age = ApiApplication.reunion.getClics()-1;
+            ApiApplication.reunion.setClics(age);
         }
         return ApiApplication.reunion.toJson();
 
     }
     @GetMapping("/data/raz")
     public String razData() {
-        ApiApplication.reunion.setName("");
-        ApiApplication.reunion.setAge(0);
+        ApiApplication.reunion.setNom("");
+        ApiApplication.reunion.setClics(0);
         return ApiApplication.reunion.toJson();
     }
 }
