@@ -3,6 +3,7 @@ package com.mr486.tda.api.controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mr486.tda.api.ApiApplication;
+import com.mr486.tda.api.entity.Reunion;
 import org.springframework.data.relational.core.sql.In;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,5 +32,23 @@ public class ApiController {
         ApiApplication.reunion.setAge(age + 1);
 
         return "{ 'ajout': true}";
+    }
+
+    @GetMapping("/data/moins")
+    public String removeData() {
+
+        if(ApiApplication.reunion.getAge()>0){
+            Integer age = ApiApplication.reunion.getAge()-1;
+            ApiApplication.reunion.setAge(age);
+            return "{ 'retrait': true}";
+        } else return "{ 'retrait': false}";
+
+    }
+
+    @GetMapping("/data/raz")
+    public String razData() {
+        ApiApplication.reunion.setName("Vide");
+        ApiApplication.reunion.setAge(0);
+        return "{ 'raz': true}";
     }
 }
