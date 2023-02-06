@@ -3,8 +3,6 @@ package com.mr486.tda.api.controller;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mr486.tda.api.ApiApplication;
-import com.mr486.tda.api.entity.Reunion;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
