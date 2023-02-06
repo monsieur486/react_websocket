@@ -14,11 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class ApiController {
     @GetMapping("/data")
     public String getData() {
-
-        final GsonBuilder builder = new GsonBuilder();
-        final Gson gson = builder.create();
-
-        return gson.toJson(ApiApplication.reunion);
+        return ApiApplication.reunion.toJson();
     }
 
     @GetMapping("/data/plus")
@@ -29,7 +25,7 @@ public class ApiController {
         ApiApplication.reunion.setName("En cours");
         ApiApplication.reunion.setAge(age + 1);
 
-        return "{ 'ajout': true}";
+        return ApiApplication.reunion.toJson();
     }
 
     @GetMapping("/data/moins")
@@ -38,15 +34,14 @@ public class ApiController {
         if(ApiApplication.reunion.getAge()>0){
             Integer age = ApiApplication.reunion.getAge()-1;
             ApiApplication.reunion.setAge(age);
-            return "{ 'retrait': true}";
-        } else return "{ 'retrait': false}";
+        }
+        return ApiApplication.reunion.toJson();
 
     }
-
     @GetMapping("/data/raz")
     public String razData() {
         ApiApplication.reunion.setName("");
         ApiApplication.reunion.setAge(0);
-        return "{ 'raz': true}";
+        return ApiApplication.reunion.toJson();
     }
 }
