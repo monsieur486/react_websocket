@@ -1,10 +1,10 @@
-const URL = "https://ws.tda.mr486.com";
+const URL = "wss://ws.tda.mr486.com";
 const socket = io(URL, { autoConnect: true });
 
 socket.on('new click', (data) => {
     let clics = data.clics;
     document.getElementById('clics').textContent = clics;
-    console.log("Nouvelle valeure de clics reçue du serveur: " + clics);
+    console.log("⚡: Nouvelle valeur de clics reçue depuis le serveur: " + clics);
 });
 
 function avertir_serveur() {
