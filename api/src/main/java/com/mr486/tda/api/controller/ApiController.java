@@ -30,9 +30,6 @@ public class ApiController {
         ApiApplication.reunion.setName("En cours");
         ApiApplication.reunion.setAge(age + 1);
 
-        final GsonBuilder builder = new GsonBuilder();
-        final Gson gson = builder.create();
-
-        return gson.toJson(ApiApplication.reunion);
+        return "{ 'ajout': true}";
     }
 }
