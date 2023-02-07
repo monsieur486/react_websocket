@@ -10,6 +10,10 @@ function avertir_serveur() {
     socket.emit('bouton_client');
 }
 
+function ctrlz_serveur() {
+    socket.emit('ctrlz_client');
+}
+
 function raz() {
     bootbox.confirm({
         message: 'Mettre le compteur à <b>0</b> ?',

@@ -16,18 +16,24 @@
 <body>
 
 <div class="container-fluid">
-    <div class="bouton">
-        <button class="btn btn-primary" onclick="avertir_serveur()">
-            Cliquez ici !
-        </button>
+    <div class="btn-group btn-group-lg" role="group" aria-label="boutons">
+        <div class="bouton">
+            <button class="btn btn-primary" onclick="avertir_serveur()">
+                Ajouter
+            </button>
+        </div>
+        <div class="bouton">
+            <button class="btn btn-warning" onclick="ctrlz_serveur()">
+                Ctrl-z
+            </button>
+        </div>
+        <p class="nombreclics"><span id="clics"></span></p>
     </div>
-
     <div class="bouton">
         <button class="btn btn-danger" onclick="raz()">
             RAZ
         </button>
     </div>
-    <p class="nombreclics">Nombre de clics <span id="clics"></span></p>
 </div>
     <script
         src="https://code.jquery.com/jquery-3.6.3.min.js"
