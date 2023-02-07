@@ -5,10 +5,8 @@ socket.on('new click', (data) => {
     if(clics===0){
         document.getElementById('boutonMoins').style.visibility = "hidden";
         document.getElementById('boutonRaz').style.visibility = "hidden";
-        document.getElementById('clics').style.visibility = "hidden";
     } else {
         document.getElementById('boutonMoins').style.visibility = "visible";
-        document.getElementById('clics').style.visibility = "visible";
     }
     if(clics>=5){
         document.getElementById('boutonRaz').style.visibility = "visible";
