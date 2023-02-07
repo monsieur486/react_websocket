@@ -1,3 +1,7 @@
+.affichage {
+    text-align: center;
+}
+
 .bouton {
     margin: 2em;
 }
@@ -5,5 +9,5 @@
 .nombreclics {
     color: green;
     font-size: 4em;
-
 }
+
