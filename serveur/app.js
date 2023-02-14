@@ -44,6 +44,17 @@ function ServersReceived(socket) {
     socket.on('disconnect', () => {
         console.log("🔥: Le client s'est connecté, socket.id = " + socket.id);
     });
+
+    socket.on('auth', (auth) => {
+        console.log("🔒: Le client s'authentifie, socket.id = " + socket.id + " avec mot de passe :" + auth);
+        if(auth == process.env.PASSWORD_DONNEUR){
+            console.log("Reussi");
+            socket.emit('auth', true);
+        } else {
+            console.log("Mauvais");
+            socket.emit('auth', false);
+        }
+    });
 }
 
 console.log('✅: Server lancé en écoute sur le port ' + process.env.SERVEUR_PORT + '. CTRL+C pour quitter.');
