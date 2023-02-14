@@ -7,7 +7,7 @@ const imagemin = require('gulp-imagemin');
 
 gulp.task('sass', function(done){
     gulp.src('assets/sass/**/*.scss')
-        .pipe(sass({outputStyle: 'compressed'})) // Using gulp-sass
+        .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('public/css'))
     done();
 });
