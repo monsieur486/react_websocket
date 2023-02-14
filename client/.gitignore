@@ -1,7 +1,5 @@
 node_modules/
 .idea
-
-public/config.js
 /public/js/.env
 /assets/javascript/config.js
 public/js/script.js
