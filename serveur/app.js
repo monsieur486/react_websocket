@@ -46,4 +46,4 @@ function ServersReceived(socket) {
     });
 }
 
-console.log('✅: Server Lancé. CTRL+C pour quitter.');
+console.log('✅: Server lancé en écoute sur le port ' + process.env.SERVEUR_PORT + '. CTRL+C pour quitter.');
