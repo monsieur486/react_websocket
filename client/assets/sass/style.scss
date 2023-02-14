@@ -1,0 +1,25 @@
+$bg-color: #4561ea;
+$big_size: 1.5em;
+
+.affichage {
+  text-align: center;
+}
+
+.bouton {
+  margin: 2em;
+}
+
+.nombreclics {
+  color: green;
+  font-size: 4em;
+}
+
+#boutonMoins {
+  visibility: hidden;
+}
+
+#boutonRaz{
+  visibility: hidden;
+}
+
+@import '../../node_modules/bootstrap/scss/bootstrap';

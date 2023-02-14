@@ -13,7 +13,8 @@ socket.on('new click', (data) => {
     } else {
         document.getElementById('boutonRaz').style.visibility = "hidden";
     }
-    document.getElementById('clics').textContent = clics;
+    const element = document.getElementById('clics');
+    element.textContent = clics;
     console.log("⚡: Nouvelle valeur de clics reçue depuis le serveur: " + clics);
 });
 
