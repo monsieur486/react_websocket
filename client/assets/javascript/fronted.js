@@ -23,8 +23,10 @@ function auth() {
 function donneur(auth){
     if(auth){
         document.getElementById('boutonAuth').style.visibility = "hidden";
+        document.getElementById('donneurTab').style.visibility = "visible";
     } else {
         document.getElementById('boutonAuth').style.visibility = "visible";
+        document.getElementById('donneurTab').style.visibility = "hidden";
     }
 
 }
