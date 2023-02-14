@@ -1,4 +1,4 @@
-const socket = io(ws_url, { autoConnect: true });
+const socket = io( "http://127.0.0.1:3001", { autoConnect: true });
 
 socket.on('new click', (data) => {
     let clics = data.clics;
