@@ -48,10 +48,10 @@ function ServersReceived(socket) {
     socket.on('auth', (auth) => {
         console.log("🔒: Le client s'authentifie, socket.id = " + socket.id + " avec mot de passe :" + auth);
         if(auth == process.env.PASSWORD_DONNEUR){
-            console.log("Reussi");
+            console.log("Authentification réussie");
             socket.emit('auth', true);
         } else {
-            console.log("Mauvais");
+            console.log("Authentification échouée !!!");
             socket.emit('auth', false);
         }
     });
