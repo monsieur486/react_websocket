@@ -1,7 +1,12 @@
+html {
+  background: url("/static/img/tapis.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 .affichage {
   text-align: center;
 }
 
-.bouton {
-  margin: 2em;
-}
