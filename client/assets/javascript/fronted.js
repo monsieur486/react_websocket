@@ -30,3 +30,13 @@ function donneur(auth){
     }
 
 }
+
+function checkFluency()
+{
+    const checkbox = document.getElementById('mySwitch');
+    if(checkbox.checked){
+        document.getElementById('main-body').style.backgroundImage="url('/static/img/tapis02.jpg')";
+    } else {
+        document.getElementById('main-body').style.backgroundImage="url('/static/img/tapis01.jpg')";
+    }
+}

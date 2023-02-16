@@ -11,15 +11,16 @@
     />
     <link href="/static/css/style.css" rel="stylesheet">
 </head>
-<body>
-
-
+<body id="main-body">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
                 <img src="/static/img/trombi_base.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 Tarot des Amis
             </a>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" checked onclick="checkFluency()">
+            </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
