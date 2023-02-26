@@ -16,7 +16,7 @@ console.log("🖧: Api     => " + process.env.API_BASE_URL);
 io.on("connection", (socket) => {
     console.log("⚡: Un nouveau client s'est connecté, socket.id: " + socket.id);
     axios.get(process.env.API_BASE_URL + '/data').then(resp => {
-        io.emit('new click', resp.data );
+        io.emit('info partie', resp.data );
     });
     ServersReceived(socket);
 });

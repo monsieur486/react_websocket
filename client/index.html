@@ -14,12 +14,12 @@
 <body id="main-body">
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand">
                 <img src="/static/img/trombi_base.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
                 Tarot des Amis
             </a>
             <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" id="mySwitch" name="darkmode" checked onclick="checkFluency()">
+                <input class="form-check-input" type="checkbox" id="changeTapis" name="darkmode" checked onclick="changeTapis()">
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -33,18 +33,24 @@
                             </button>
                         </div></div>
                     <div class="d-inline bg-dark text-white">
-                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">DONNEUR</h5>
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">MAITRE DU JEUX</h5>
                     </div>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
                     <div id="donneurTab">
-                        <button class="btn btn-primary" onclick="auth()">
-                            4 <i class="fa fa-user"></i>
-                        </button>
-                        <button class="btn btn-primary" onclick="auth()">
-                            5 <i class="fa fa-user"></i>
-                        </button>
+                        <div id="creation_partie">
+                            <h4>Créer une partie</h4>
+                            <button class="btn btn-primary" onclick="partie4()">
+                                4 <i class="fa fa-user"></i>
+                            </button>
+                            <button class="btn btn-primary" onclick="partie5()">
+                                5 <i class="fa fa-user"></i>
+                            </button>
+                        </div>
+                        <div id="partie_en_cours">
+                            <p>Partie en cours</p>
+                        </div>
                     </div>
                 </div>
             </div>
